@@ -1,10 +1,10 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class StackWithLinkedList {
+public class QueueWithLinkedList {
 
     public static void main(String[] args) {
-        System.out.println("Stack implemented using linked list!");
+        System.out.println("Queue implemented using linked list!");
 
         List<Integer> linkedlist = new LinkedList<>();
 
@@ -18,7 +18,7 @@ public class StackWithLinkedList {
         System.out.println("Pop one item : " + pop(linkedlist));
         enumerator(linkedlist);
 
-        System.out.println("Peak one item : " + peak(linkedlist));
+        System.out.println("peak one item : " + peak(linkedlist));
         enumerator(linkedlist);
     }
 
@@ -27,16 +27,14 @@ public class StackWithLinkedList {
     }
 
     static public int pop(List<Integer> linkedlist){
-        return linkedlist.remove(linkedlist.size() - 1);
+        return linkedlist.remove(0);
     }
 
     static public int peak(List<Integer> linkedlist){
-        return linkedlist.get(linkedlist.size() - 1);
+        return linkedlist.get(0);
     }
 
     static public void enumerator(List<Integer> linkedlist){
-        for (int i = (linkedlist.size() - 1); i >= 0; i--) {
-            System.out.println(linkedlist.get(i));
-        }
+        linkedlist.forEach(System.out::println);
     }
 }
